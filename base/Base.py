@@ -1,6 +1,5 @@
 import time
 
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
 class Base:
@@ -32,3 +31,11 @@ class Base:
 
      def base_get_info(self,loc):
          return self.base_get_element(loc).text
+
+     def base_element_is_exists(self,loc):
+         try:
+             if self.base_get_element(loc):
+                 return True
+         except :
+             return False
+
